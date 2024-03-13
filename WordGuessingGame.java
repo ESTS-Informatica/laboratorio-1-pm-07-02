@@ -19,7 +19,6 @@ public class WordGuessingGame {
     // Methods
     public void play() {
         showWelcome();
-
         while (!hiddenWord.equals(guessedWord)) {
             showGuessedWord();
             System.out.println();
@@ -80,5 +79,11 @@ public class WordGuessingGame {
 
     private void showGuessedWord() {
         System.out.print(guessedWord);
+    }
+
+    public void reset() {
+        hiddenWord = wordGenerator.generateWord();
+        initializeGuessedWord();
+        numberOfTries = 0;
     }
 }
